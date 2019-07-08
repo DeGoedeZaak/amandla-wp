@@ -18,7 +18,7 @@ openssl req \
     -subj /CN=myapp.local \
     -reqexts SAN \
     -extensions SAN \
-    -config <(cat /System/Library/OpenSSL/openssl.cnf \
+    -config <(cat /usr/lib/ssl/openssl.cnf \
         <(printf '[SAN]\nsubjectAltName=DNS:myapp.local')) \
     -sha256 \
     -days 3650
