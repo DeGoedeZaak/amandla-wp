@@ -1,8 +1,8 @@
-version: '3.6'
+version: '3.3'
 services:
   nginx:
     image: nginx:latest
-    container_name: myapp-nginx
+    container_name: amandla-nginx
     ports:
       - '80:80'
       - '443:443'
@@ -16,12 +16,12 @@ services:
 
   mysql:
     image: mariadb
-    container_name: myapp-mysql
+    container_name: amandla-mysql
     volumes:
        - './data/db:/var/lib/mysql:delegated'
     environment:
       - MYSQL_ROOT_PASSWORD=password
-      - MYSQL_DATABASE=myapp
+      - MYSQL_DATABASE=amandla
     restart: always
     ports:
       - '3306:3306'
@@ -30,12 +30,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: myapp-wordpress
+    container_name: amandla-wordpress
     volumes:
       - ./src:/var/www/html:rw,cached
       - ./config/php.ini:/usr/local/etc/php/conf.d/php.ini
     environment:
-      - WORDPRESS_DB_NAME=myapp
+      - WORDPRESS_DB_NAME=amandla
       - WORDPRESS_TABLE_PREFIX=wp_
       - WORDPRESS_DB_HOST=mysql
       - WORDPRESS_DB_PASSWORD=password
@@ -45,7 +45,7 @@ services:
 
   composer:
     image: composer/composer
-    container_name: myapp-composer
+    container_name: amandla-composer
     working_dir: /var/www/html
     restart: 'no'
     volumes:
