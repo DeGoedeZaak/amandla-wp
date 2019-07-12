@@ -1,4 +1,8 @@
-FROM wordpress:apache
+FROM urre/wordpress-nginx-docker-compose-image
 
-RUN rm -rf /usr/src/wordpress/*
-ADD ./src/web/ /usr/src/wordpress/
+# Install wp-cli
+RUN curl -o /bin/wp-cli.phar https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+RUN chmod +x /bin/wp-cli.phar
+RUN cd /bin && mv wp-cli.phar wp
+
+# Note: Use docker-compose up -d --force-recreate --build when Dockerfile has changed.
