@@ -4,4 +4,5 @@ RUN rm -rf /usr/src/wordpress/*
 ADD ./src/web/ /usr/src/wordpress/
 ADD ./src/vendor /var/www/vendor
 ADD ./src/config /var/www/config
-ADD ./src/wp-cli.php /var/www/wp-cli.php
+ADD ./src/wp-cli.yml /var/www/wp-cli.yml
+
