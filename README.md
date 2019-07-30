@@ -7,7 +7,7 @@ Use WordPress with Docker using [Docker compose](https://docs.docker.com/compose
 
 + `Dockerfile` for extending a base image and install wp-cli
 	+ Using a custom [Docker image](https://github.com/urre/wordpress-nginx-docker-compose-image) with [automated build on Docker Hub](https://cloud.docker.com/repository/docker/urre/wordpress-nginx-docker-compose-image)
-+ Local domain ex `myapp.local`
++ Local domain ex `amandla.local`
 + Custom nginx config in `./nginx`
 + Custom `php.ini` config in `./config`
 + Volumes for `nginx`, `wordpress` and `mariadb`
@@ -28,7 +28,7 @@ Install [Docker](https://www.docker.com/get-started)
 cd cli && ./create-cert.sh
 ```
 
-> Edit the script to your your custom domain, this example uses myapp.local
+> Edit the script to your your custom domain, this example uses amandla.local
 
 ### Trust cert in macOS Keychain. (Chrome and Safari will trust the certs, for Firefox: add them in preferences)
 
@@ -36,14 +36,14 @@ cd cli && ./create-cert.sh
 cd cli && ./trust-cert.sh
 ```
 
-> Edit the script to your your custom domain, this example uses myapp.local
+> Edit the script to your your custom domain, this example uses amandla.local
 
 ### Setup vhost in /etc/hosts
 
 ```shell
 cd cli && ./setup-hosts-file.sh
 ```
-> Follow the instructions. For example use `myapp.local`
+> Follow the instructions. For example use `amandla.local`
 
 ### Setup ENV
 
@@ -76,7 +76,7 @@ composer install
 docker-compose up -d
 ```
 
-🚀 Open up [https://myapp.local](https://myapp.local)
+🚀 Open up [https://amandla.local](https://amandla.local)
 
 
 ### Notes:

@@ -12,14 +12,14 @@ openssl req \
     -newkey rsa:2048 \
     -x509 \
     -nodes \
-    -keyout myapp.local.key \
+    -keyout amandla.local.key \
     -new \
-    -out myapp.local.crt \
-    -subj /CN=myapp.local \
+    -out amandla.local.crt \
+    -subj /CN=amandla.local \
     -reqexts SAN \
     -extensions SAN \
     -config <(cat /usr/lib/ssl/openssl.cnf \
-        <(printf '[SAN]\nsubjectAltName=DNS:myapp.local')) \
+        <(printf '[SAN]\nsubjectAltName=DNS:amandla.local')) \
     -sha256 \
     -days 3650
 
