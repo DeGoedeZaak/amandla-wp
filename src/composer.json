@@ -31,7 +31,13 @@
     {
       "type": "composer",
       "url": "https://wpackagist.org"
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:DeGoedeZaak/amandla-wp-theme.git",
+      "no-api": true
     }
+
   ],
   "require": {
     "php": ">=7.1",
@@ -41,7 +47,8 @@
     "roots/wordpress": "^5.2.1",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.0.0",
-    "the-open/campaigns": "dev-master"
+    "the-open/campaigns": "dev-master",
+    "amandla/amandla-wp-theme": "dev-master"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2",
