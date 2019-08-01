@@ -4,33 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0fba2ba577ddf01fd1500bacb6a47856",
+    "content-hash": "12d61370f0a44e7e0b3babf9aa1ae7bb",
     "packages": [
-        {
-            "name": "amandla/amandla-wp-theme",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:DeGoedeZaak/amandla-wp-theme.git",
-                "reference": "c53626dff5cf1709f03967648907db6c280c9e91"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/DeGoedeZaak/amandla-wp-theme/zipball/c53626dff5cf1709f03967648907db6c280c9e91",
-                "reference": "c53626dff5cf1709f03967648907db6c280c9e91",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "~1.5",
-                "php": ">=5.6"
-            },
-            "type": "wordpress-theme",
-            "license": [
-                "proprietary"
-            ],
-            "description": "Amandla Wordpress theme",
-            "time": "2019-07-31T13:31:30+00:00"
-        },
         {
             "name": "composer/installers",
             "version": "v1.6.0",
@@ -851,7 +826,6 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "the-open/campaigns": 20,
-        "amandla/amandla-wp-theme": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,
