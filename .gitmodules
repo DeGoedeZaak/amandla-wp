@@ -1,0 +1,3 @@
+[submodule "amandla-wp-theme"]
+	path = amandla-wp-theme
+	url = git@github.com:DeGoedeZaak/amandla-wp-theme.git
