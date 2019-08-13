@@ -16,14 +16,14 @@ if [ "$OS" = "Darwin" ]; then
         -newkey rsa:2048 \
         -x509 \
         -nodes \
-        -keyout myapp.local.key \
+        -keyout amandla.local.key \
         -new \
-        -out myapp.local.crt \
-        -subj /CN=myapp.local \
+        -out amandla.local.crt \
+        -subj /CN=amandla.local \
         -reqexts SAN \
         -extensions SAN \
         -config <(cat /System/Library/OpenSSL/openssl.cnf \
-            <(printf '[SAN]\nsubjectAltName=DNS:myapp.local')) \
+            <(printf '[SAN]\nsubjectAltName=DNS:amandla.local.key')) \
         -sha256 \
         -days 3650
 
@@ -32,14 +32,14 @@ elif [ "$OS" = "Linux" ]; then
         -newkey rsa:2048 \
         -x509 \
         -nodes \
-        -keyout myapp.local.key \
+        -keyout amandla.local.key \
         -new \
-        -out myapp.local.crt \
-        -subj /CN=myapp.local \
+        -out amandla.local.crt \
+        -subj /CN=amandla.local \
         -reqexts SAN \
         -extensions SAN \
         -config <(cat /usr/lib/ssl/openssl.cnf \
-            <(printf '[SAN]\nsubjectAltName=DNS:myapp.local')) \
+            <(printf '[SAN]\nsubjectAltName=DNS:amandla.local.key')) \
         -sha256 \
         -days 3650
 else
@@ -47,20 +47,6 @@ else
     exit -1
 fi
 
-openssl req \
-    -newkey rsa:2048 \
-    -x509 \
-    -nodes \
-    -keyout amandla.local.key \
-    -new \
-    -out amandla.local.crt \
-    -subj /CN=amandla.local \
-    -reqexts SAN \
-    -extensions SAN \
-    -config <(cat /usr/lib/ssl/openssl.cnf \
-        <(printf '[SAN]\nsubjectAltName=DNS:amandla.local')) \
-    -sha256 \
-    -days 3650
 
 mkdir -p ../certs
 
