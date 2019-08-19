@@ -129,3 +129,12 @@ Rebuild docker container when Dockerfile has changed
 ```shell
 docker-compose up -d --force-recreate --build
 ```
+
+#### Useful Wordpress commpands
+
+Run the campaigns fetching cron job. To do this, you need to get into the container as user id 1000 and run `wp cron` command: 
+
+```sh
+docker-compose exec -u 1000 wordpress bash -i
+wp cron event run --all
+```
