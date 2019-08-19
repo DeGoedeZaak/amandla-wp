@@ -1,0 +1,4 @@
+[submodule "amandla-wp-theme"]
+	path = src/web/app/themes/amandla-wp-theme
+	url = git@github.com:DeGoedeZaak/amandla-wp-theme.git
+	branch = master
