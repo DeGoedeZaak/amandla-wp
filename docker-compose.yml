@@ -18,7 +18,7 @@ services:
     image: mariadb
     container_name: amandla-mysql
     volumes:
-       - './data/db:/var/lib/mysql:delegated'
+       - 'amandla-data:/var/lib/mysql:delegated'
     environment:
       - MYSQL_ROOT_PASSWORD=password
       - MYSQL_DATABASE=amandla
@@ -50,3 +50,6 @@ services:
     restart: 'no'
     volumes:
       - ./src:/var/www/html:rw,cached
+
+volumes:
+  amandla-data:
