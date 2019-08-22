@@ -6,6 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Twig_' => array($vendorDir . '/twig/twig/lib'),
+    'Routes' => array($vendorDir . '/upstatement/routes'),
     'PhpOption\\' => array($vendorDir . '/phpoption/phpoption/src'),
     'Env' => array($vendorDir . '/oscarotero/env/src'),
 );
