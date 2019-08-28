@@ -7,3 +7,8 @@ ENV WEB_ALIAS_DOMAIN *.sample.the-open.net
 VOLUME /app/web/app/uploads
 
 ADD ./src/ /app/
+
+RUN curl -o /usr/local/bin/wp https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
+    chmod +x /usr/local/bin/wp
+
+
