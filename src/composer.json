@@ -43,7 +43,8 @@
     "roots/wp-password-bcrypt": "1.0.0",
     "the-open/campaigns": "dev-master",
     "wpackagist-plugin/timber-library": "^1.10",
-    "wpackagist-plugin/advanced-custom-fields": "^5.8"
+    "wpackagist-plugin/advanced-custom-fields": "^5.8",
+    "wpackagist-plugin/wordpress-importer": "^0.6.4"
    },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2",
