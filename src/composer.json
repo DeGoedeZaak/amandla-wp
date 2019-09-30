@@ -31,6 +31,10 @@
     {
       "type": "composer",
       "url": "https://wpackagist.org"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/marcinkoziej/campaigns.git"
     }
   ],
   "require": {
