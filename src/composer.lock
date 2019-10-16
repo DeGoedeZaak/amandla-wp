@@ -477,12 +477,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/marcinkoziej/campaigns.git",
-                "reference": "c1002ca0b2b136fa7772a8649b53c4250388e346"
+                "reference": "11b0a7b85738bf68dcc5e1c0b7ecc83e152b8974"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/marcinkoziej/campaigns/zipball/c1002ca0b2b136fa7772a8649b53c4250388e346",
-                "reference": "c1002ca0b2b136fa7772a8649b53c4250388e346",
+                "url": "https://api.github.com/repos/marcinkoziej/campaigns/zipball/11b0a7b85738bf68dcc5e1c0b7ecc83e152b8974",
+                "reference": "11b0a7b85738bf68dcc5e1c0b7ecc83e152b8974",
                 "shasum": ""
             },
             "require": {
@@ -490,7 +490,6 @@
                 "php": ">=7.2"
             },
             "type": "wordpress-plugin",
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -501,7 +500,10 @@
                 }
             ],
             "description": "Wordpress Plugin to pull Campaigns from External systems",
-            "time": "2018-04-13T09:23:29+00:00"
+            "support": {
+                "source": "https://github.com/marcinkoziej/campaigns/tree/master"
+            },
+            "time": "2019-10-16T11:32:08+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
