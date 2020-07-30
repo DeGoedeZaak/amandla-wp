@@ -1,0 +1,18 @@
+{% if menu %}
+	<ul id="topnav" class="topnav desktop-nav">
+	{% for item in items %}
+		<li id="{{item.slug}}" class="{{ item.classes | join(' ') }} topnav_after">
+			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+			<!--{% include "menu.twig" with {'items': item.children} %}-->
+		</li>
+	{% endfor %}
+	
+	
+	    {{languages_drop}}
+	
+		<li class="donate_btn">      
+			<a href="http://www.givengain.com/cause/6409/projects/15705/" class="left-nav">{{pl_e('Donate')}} </a>
+			<img class="Home_lock_img" src="{{ site.theme.link }}/images/Home_lock.png" alt="">
+		</li>
+	</ul>
+{% endif %}

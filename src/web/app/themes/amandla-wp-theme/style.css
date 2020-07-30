@@ -1,0 +1,403 @@
+/*
+ * Theme Name: My Timber Starter Theme
+ * Description: Starter Theme to use with Timber
+ * Author: Upstatement and YOU!
+*/
+.team_title_img {
+    width: 18%;
+    float: left;
+    margin-right: 5%;
+}
+.team_des_detail {
+    width: 77%;
+    float: left;
+}
+.team_detail {
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+.funded_detail ul{
+	padding: 0;
+    margin: auto;
+    text-align: center;
+}
+.funded_detail ul li {
+    list-style: none;
+    width: 32.33%;
+    display: inline-block;
+    padding: 20px 20px;
+}
+.funded_detail ul li img{    
+	object-fit: cover;
+    height: 100px;
+}
+.excerpt-image.campaign_post_img img{
+	width: 100%;
+    object-fit: cover;
+    height: 300px;
+}
+.footer_w_custo li{list-style:none;}
+.twiiter_home{
+	overflow-y: auto;
+    height: 500px;
+}
+#polylang-2 label.screen-reader-text{display:none;}
+#polylang-3 label.screen-reader-text{display:none;}
+#polylang-3	{position: relative;}
+#polylang-2{ border-left: 1px solid #cccccc;position: relative;}
+li#polylang-2:after {
+    content: "";    
+    vertical-align: middle;
+    border-top: 8px solid;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    color: #000;
+    top: 39px;
+    position: absolute;
+    right: 0px;
+}
+li#polylang-3:after {
+    content: "";    
+    vertical-align: middle;
+    border-top: 8px solid;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    color: #000;
+    top: 14px;
+    position: absolute;
+    right: 3px;
+}
+#lang_choice_polylang-2{
+	color: #222222;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0 20px;
+    height: 84px;
+    display: inline-block;
+    margin: 0px;
+    position: relative;
+    background-color: transparent;
+    line-height: 84px;
+    border: none;
+	-webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+	}
+#lang_choice_polylang-3{
+	color: #222222;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding:7px 17px 7px 6px;
+    display: inline-block;
+    margin: 0px;
+    position: relative;
+    background-color: transparent;
+    border: none;
+	-webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+	}	
+.blog{
+    padding-top: 20px;
+}
+#topnav>li.last_pip_remove:after{
+    content:" " !important;
+}
+:lang(zu) #topnav>li a {
+   font-size: 17px;
+}
+:lang(zu) nav li a, :lang(zu) .subnav li a {   
+    padding: 0 10px;
+}
+:lang(xho) #topnav>li a {
+   font-size: 17px;
+}
+:lang(xho) nav li a, :lang(xho) .subnav li a {   
+    padding: 0 10px;
+}
+:lang(tsn) #topnav>li a {
+   font-size: 18px;
+}
+:lang(tsn) nav li a, :lang(tsn) .subnav li a {   
+    padding: 0 12px;
+}
+@media only screen and (max-width: 1330px) and (min-width: 1229px){
+	:lang(zu) #topnav>li a{
+		font-size: 16px;
+	}
+	:lang(zu) #lang_choice_polylang-2 {    
+		font-size: 16px;
+	}
+	:lang(zu) nav li a{
+		padding: 0 7px;
+	}
+	:lang(zu)#lang_choice_polylang-2{
+		padding: 0 10px;
+	}
+}
+@media only screen and (max-width: 1230px) and (min-width: 1169px){
+	:lang(zu) #topnav>li a{
+		font-size: 15px;
+	}
+	:lang(zu) #lang_choice_polylang-2 {    
+		font-size: 15px;
+	}
+}
+
+
+@media only screen and (max-width: 1170px){
+	#lang_choice_polylang-2{
+		font-size: 14px;
+		padding: 0 15px 0 6px;
+	}
+	:lang(zu) #topnav>li a {
+		font-size: 14px;
+	}
+	:lang(xho) #topnav>li a {
+		font-size: 14px;
+	}
+}
+@media only screen and (max-width: 1100px){
+	.funded_detail ul li img {
+		object-fit: inherit;
+		height: auto;
+		width: 100%;
+	}
+}
+@media only screen and (max-width: 1110px) and (min-width: 929px){
+	:lang(zu) #topnav>li a{
+		font-size: 11px;
+	}
+	#topnav>li.topnav_after:after {
+		font-size: 11px !important;
+    }
+	:lang(tsn) #topnav>li a{
+		font-size: 13px;
+	}
+	:lang(xho) #topnav>li a {
+		font-size: 11px;
+	}
+	:lang(xho) .logo_main_hader img#logo {
+		width: 180px;
+	}
+    :lang(xho) #lang_choice_polylang-2 {
+		font-size: 11px;
+	}
+}
+@media only screen and (max-width: 930px) and (min-width: 768px){
+	:lang(zu) #topnav>li a{
+		font-size: 11px;
+	}
+	#topnav>li.topnav_after:after {
+		font-size: 11px !important;
+    }
+	:lang(zu).logo_main_hader img#logo{width: 170px;}
+	#lang_choice_polylang-2{
+		font-size: 12px;
+		padding: 0 10px 0 3px;
+	}
+	:lang(tsn) #topnav>li a{
+		font-size: 10px;
+	}
+	:lang(xho) #topnav>li a {
+		font-size: 11px;
+	}
+	:lang(xho) .logo_main_hader img#logo {
+		width: 170px;
+	}
+    :lang(xho) #lang_choice_polylang-2 {
+		font-size: 11px;
+	}
+}
+@media only screen and (max-width: 870px) and (min-width: 768px){
+	:lang(zu) #topnav>li a{
+		font-size: 10px;
+	}
+	:lang(xho) #topnav>li a {
+		font-size: 10px;
+	}
+	:lang(xho) .logo_main_hader img#logo {
+		width: 160px;
+	}
+    :lang(xho) #lang_choice_polylang-2 {
+		font-size: 10px;
+	}
+
+}
+
+
+@media only screen and (max-device-width: 1024px) and (min-device-width: 768px){
+	iframe[src*='youtube'] {
+		display: block !important;
+	}
+}
+
+@media only screen and (max-device-width: 1024px){
+	#polylang-2{display:none;}
+}
+@media only screen and (max-width: 768px){
+	.excerpt-image.campaign_post_img img {
+		width: 100%;
+		object-fit: inherit;
+		height: auto;
+	}
+}	
+@media only screen and (max-width: 768px){
+	#polylang-2{display:none;}
+		.mobile_view .excerpt-Campaign-link {
+		padding-top: 20px !important;
+	}
+}
+@media only screen and (max-width: 620px){
+	iframe[src*='youtube'] {
+		width:100%;
+	    height: 277px;
+	}
+	.site-logo-hader {  
+		padding: 0px 0px 0px 12px !important;
+	}
+}
+@media only screen and (max-width: 460px){
+	#lang_choice_polylang-3 {
+		padding: 5px 12px 5px 5px;
+		font-size: 14px;
+	}
+	li#polylang-3:after{
+		border-top: 4px solid;
+		border-right: 4px solid transparent;
+		border-left: 4px solid transparent;
+	}
+	footer #bottom-footer-row {
+    padding: 0 0 20px !important;}
+	iframe[src*='youtube'] {
+		width:100%;
+	    height: 250px;
+	}
+	.team_title_img {
+		width: 100%;
+		float: none;
+		margin-right: 0;
+	}
+	.team_des_detail {
+		width: 100%;
+		float: none;
+	}
+}
+@media only screen and (max-width: 385px){
+	.logo_main_hader {
+		width: 150px !important;
+	}
+	.site-logo-hader {
+		padding: 0px 0px 0px 0px !important;
+	}
+	
+}	
+@media only screen and (max-width: 350px){
+	.logo_main_hader {
+		width: 100% !important;
+		text-align: center;
+	}
+	.mobile_menu_free_label {
+		font-size: 14px !important;
+	}
+	#menu input[type="checkbox"]:checked ~ .desktop-nav {
+    top: 106px;
+	}
+	.desktop-nav {
+		top: 106px !important;
+	}
+	.mobile_menu_free_label {   
+		margin: 6px 0px 0px 3px !important;
+	}
+	.excerpt-image.campaign_post_img img {
+		object-fit: unset;
+		height: auto;
+	}
+	.latest_campaingn_title {
+		margin-bottom: 20px !important;
+		margin-top: 20px !important;
+	}
+	.home2_campaignslist .home2_campaignslist .excerpt-support-link {
+		width: 60% !important;
+	}
+	.excerpt-Campaign-link a {
+		line-height: normal !important;
+	}
+	.donate_btn {
+		padding: 8px 0px !important;
+   }
+   iframe[src*='youtube'] {
+		width:100%;
+	    height: 190px;
+	}
+	.funded_detail ul li {
+		width: 90%;
+		padding: 10px 20px;
+	}
+	.Latest_campaigns_list ul {
+		display: block !important;
+	}
+	 .bar-text.text_Latest_campaigns
+	 {
+		padding-left: 10px !important;
+		word-break: break-all;
+	    font-size: 10px !important;
+	}
+	li#polylang-3:after {
+		border-top: 0px solid;
+		border-right: 0px solid transparent;
+		border-left: 0px solid transparent;
+   }
+}
+
+@media only screen and (max-width: 193px){
+	#lang_choice_polylang-3{width: 100%;}
+	.menu-link-lan {
+		display: inline-block;
+		width: 100%;
+	}
+	.desktop-nav {
+		top: 98px !important;
+	}
+	#menu input[type="checkbox"]:checked~.desktop-nav {
+		top: 100px;
+		right: 0 !important;
+		width: 100% !important;
+		left: 0 !important;
+	}
+	#menu .topnav.desktop-nav{width: 100%;}	
+	:lang(tsn) #topnav>li a {
+		font-size: 16px;
+	}
+	.home2_campaignslist .home2_campaignslist .excerpt-support-link {
+		width: 100% !important;
+	}
+	.excerpt-Campaign-link a {
+		padding: 10px 10px !important;
+		font-size: 16px !important;
+	}
+	.headline.center_title{font-size: 26px !important;}
+	.Latest_campaigns_list ul {
+		display: block !important;
+	}
+	.detail_Latest_campaigns {
+      padding: 30px 10px 0 !important;
+   }
+   iframe[src*='youtube'] {
+		width: 100%;
+		height: 132px;
+	}
+	.Home_lock_img {   
+		right: 30px !important;
+	}
+	.home2_campaignslist .home2_campaignslist .excerpt-support-link a {
+		font-size: 16px !important;
+	}
+	body.slug_home h2 {
+		font-size: 21px !important;
+	}
+}
+

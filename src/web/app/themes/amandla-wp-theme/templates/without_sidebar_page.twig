@@ -1,0 +1,51 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    
+	<h2 class="headline center_title">{{post.title}}</h2>
+    <div class="main-container" id="middle">
+        <div class="main width-container clearfix" id="post-{{post.ID}}">         
+            
+			<!-- onecolumn -->
+			<div class="onecolumn-container clearfix"> 				
+				
+				<div class="content-pages-show-basic-wide onecolumn-inner-container">
+					<!-- _breadcrumbs.html -->
+
+					<!-- /_breadcrumbs.html -->
+					{%if page_sub_title != ''%}
+						<h2 class="headline" style="margin-top: 12px;">{{ page_sub_title }}</h2>
+					{%endif%}
+					<div id="content">
+						<div id="intro" class="intro">
+							<div class="text-content">
+								{{post.content}}
+							</div>
+						</div>
+						<div class="like-page">								
+
+						</div>						
+					
+					</div> <!-- end_page_content -->
+				</div>
+				
+				
+    
+			</div><!-- end onecolumn -->
+		</div>
+	</div>
+	
+	
+	
+	
+	<!--<div class="content-wrapper">
+		<article class="post-type-{{post.post_type}}" >
+			<section class="article-content">
+				<h1 class="article-h1">{{post.title}}</h1>
+				<div class="article-body">
+					{{post.content}}
+				</div>
+			</section>
+		</article>
+	</div>-->
+{% endblock %}

@@ -1,0 +1,78 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+	<body class="{{body_class}} slug_{{post.slug}}" data-template="base.twig">
+	
+	 <div id="pattern" class="pattern">
+    <div class="wrap" id="wrap">
+      <div id="body" class="page-pages-show-{{post.slug}}">
+		<!--<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>-->
+		
+		<!--header-->
+		<div class="site-logo-main">
+        <div class="site-logo-hader clearfix">
+          <div class="site-logo-hader-sub clearfix">
+            			
+			{% block header %}
+					<a class="logo_main_hader hdr-logo" href="{{site.url}}/{{lang}}">
+					   {%if headerlogo !=""%}
+						<img id="logo" src="{{headerlogo}}" alt="logo">
+					   {%else%}	
+						{{site.name}}
+					   {%endif%}
+					</a>
+            
+					<!--<h1 class="hdr-logo" role="banner">
+						<a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
+					</h1>-->
+					<nav id="menu" class="nav_menu_n">
+                           <input type="checkbox" id="mobile_menu_free">
+						<label class="mobile_menu_free_label" for="mobile_menu_free">MENU <span class="caret"></span></label>
+						{% include "menu.twig" with {'items': menu.get_items} %}
+					</nav><!-- #nav -->
+				   <div class="menu-link-lan">
+						    {{languages_drop_mobile}}
+                        </div>
+			{% endblock %}
+			
+			
+
+          </div>
+          <!-- .width-container -->
+        </div>
+        </div>
+		
+		<!--header-->	
+			
+		
+
+		<section id="content" role="main" class="content-wrapper">
+			{% if title %}<h1>{{title}}</h1>{% endif %}
+			<div class="wrapper {{sidebar_class}}">
+				{% block content %}
+					Sorry, no content
+				{% endblock %}
+			</div>
+			{% if sidebar %}
+				<aside class="layout-sidebar">
+					{{sidebar}}
+				</aside>
+			{% endif %}
+		</section>
+
+		{% block footer %}
+			<footer id="footer" class="clearfix">
+				{% include 'footer.twig' %}
+			</footer>
+			{{ function('wp_footer') }}
+		{% endblock %}
+		</div>
+		</div>
+		</div>
+	</body>
+</html>

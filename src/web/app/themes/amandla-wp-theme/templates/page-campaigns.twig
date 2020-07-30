@@ -1,0 +1,89 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    
+	<h2 class="headline center_title">{{post.title}}</h2>
+    <div class="main-container" id="middle">
+        <div class="main width-container clearfix" id="post-{{post.ID}}">         
+            
+			<!-- onecolumn -->
+			<div class="onecolumn-container clearfix"> 				
+				
+				<div class="content-pages-show-basic-wide onecolumn-inner-container">
+					<!-- _breadcrumbs.html -->
+
+					<!-- /_breadcrumbs.html -->
+					
+					<div id="content">
+						<div id="intro" class="intro">
+							<div class="text-content">
+								{{post.content}}
+								
+								<div class="Latest_campaigns_list featured-campaign">								
+									<ul class="homepage_excerpt-list">
+										<!-- campaign_post -->
+										{% for homepage_excerpt in campaign_post %}
+											
+											<li id="{{ cycle(['odd', 'even'], loop.index0) }}">
+												<div class="row-fluid">
+													<div class="excerpt-content span12">
+														<div class="excerpt-image campaign_post_img">
+															<a href="{{ homepage_excerpt.url }}">
+																<img  src="{{ homepage_excerpt.image }}">
+															</a>
+														</div>
+														<div class="detail_Latest-main">
+															<div class="detail_Latest_campaigns">
+																<span><a href="{{ homepage_excerpt.url }}">{{ homepage_excerpt.post_title }}</a></span>              
+																<p>{{ homepage_excerpt.post_content |striptags| truncate(40)}}</p>          
+
+																{% if homepage_excerpt.max_actions !='' %}
+											
+																	<div class="bar-goal">{{ homepage_excerpt.max_actions}} {{pl_e('signatures required')}}</div>
+
+																	<div class="progress progress_Latest_campaigns">
+																		<div class="bar bar-success success_Latest_campaigns" style="width: {{ homepage_excerpt.actions*100 / homepage_excerpt.max_actions}}%;">     
+																		{% if homepage_excerpt.actions < 2 %}
+																			<div class="bar-text text_Latest_campaigns">{{pl_e('JUST STARTED')}}</div>
+																		{% else %}
+																			<div class="bar-text text_Latest_campaigns">{{ homepage_excerpt.actions}} {{pl_e('SIGNATURES')}}</div>
+																		{% endif %}
+																		</div>
+																	</div>
+																{% endif %}
+
+																<div class="excerpt-support-link">
+																	<a class="desktop-visible" href="{{ homepage_excerpt.url }}">{{pl_e('SIGN NOW')}}</a>
+																	<a class="mobile-visible" href="{{ homepage_excerpt.url }}#sidescroll">{{pl_e('SIGN NOW')}}</a>
+																</div>
+
+
+															</div>    
+														</div>  
+													</div>
+												</div>
+											</li>	
+										
+										{% endfor %}
+										<!-- END campaign_post -->
+									</ul>
+								</div>
+								
+							</div>
+						</div>
+						<div class="like-page">								
+
+						</div>						
+					
+					</div> <!-- end_page_content -->
+				</div>
+				
+				
+    
+			</div><!-- end onecolumn -->
+		</div>
+	</div>
+	
+	
+	
+{% endblock %}

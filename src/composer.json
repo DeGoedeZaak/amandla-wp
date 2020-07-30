@@ -35,10 +35,6 @@
     {
       "type": "vcs",
       "url": "git@github.com:marcinkoziej/campaigns.git"
-    },
-    {
-       "type": "vcs",
-       "url": "git@github.com:DeGoedeZaak/amandla-wp-theme.git"
     }
   ],
   "require": {
@@ -50,7 +46,6 @@
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.0.0",
     "the-open/campaigns": "dev-master",
-    "amandla/amandla-wp-theme": "dev-master",
     "wpackagist-plugin/timber-library": "^1.10",
     "wpackagist-plugin/advanced-custom-fields": "^5.8",
     "wpackagist-plugin/wordpress-importer": "^0.6.4",
@@ -64,8 +59,7 @@
   "extra": {
     "installer-paths": {
       "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
-      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
-      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+      "web/app/plugins/{$name}/": ["type:wordpress-plugin"]
     },
     "wordpress-install-dir": "web/wp"
   },

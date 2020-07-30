@@ -1,0 +1,70 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    
+	<h2 class="headline center_title">{{post.title}}</h2>
+    <div class="main-container" id="middle">
+        <div class="main width-container clearfix" id="post-{{post.ID}}">         
+            
+			<!-- _columns_2.html -->
+			<div class="twocolumn-container clearfix"> 				
+				<div class="left-column">
+					<div class="content-pages-show-basic">
+						<!-- _breadcrumbs.html -->
+
+						<!-- /_breadcrumbs.html -->
+						{%if page_sub_title != ''%}
+							<h2 class="headline">{{ page_sub_title }}</h2>
+						{%endif%}
+						<div id="content">
+							<div id="intro" class="intro">
+								<div class="text-content">
+									{{post.content}}
+								</div>
+							</div>
+							<div class="like-page">								
+
+							</div>						
+						
+						</div> <!-- end_page_content -->
+					</div>
+				</div> <!-- end left-column -->
+
+				<div class="right-column desktop-visible">
+					<div class="facebook_feed_sidbar">      
+						<!-- <h2 class="Latest_News_title">Facebook Feed</h2> -->
+						<div class="box_s">       
+							<div class="fb-page" data-href="https://www.facebook.com/amandla.mobi/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-width="362" data-show-facepile="true" data-show-posts="true">
+								<div class="fb-xfbml-parse-ignore">
+									<blockquote cite="https://www.facebook.com/amandla.mobi/"><a href="https://www.facebook.com/amandla.mobi/">amandla.mobi</a></blockquote>
+								</div>
+							</div>
+						</div>
+						<div class="follow_btn">
+							<div class="twiiter_home">                     
+								<a class="twitter-timeline" href="https://twitter.com/amandlamobi" data-widget-id=""><img src="{{ site.theme.link }}/images/follow_Tweets_img.png"/></a>
+							</div>
+						</div>   
+					</div>
+					
+				</div><!-- End right-column -->	
+				
+    
+			</div><!-- end columns_2 -->
+		</div>
+	</div>
+	
+	
+	
+	
+	<!--<div class="content-wrapper">
+		<article class="post-type-{{post.post_type}}" >
+			<section class="article-content">
+				<h1 class="article-h1">{{post.title}}</h1>
+				<div class="article-body">
+					{{post.content}}
+				</div>
+			</section>
+		</article>
+	</div>-->
+{% endblock %}
