@@ -64,12 +64,12 @@ task('permission:change', function(){
 
 task('link:enviroment-file', function(){
     writeln( '<info>  Link .env file </info>' );
-    run ('sudo ln -s {{deploy_path}}/shared/production/enviroment {{release_path}}/src/web/app/uploads');
+    run ('sudo ln -s {{deploy_path}}/shared/production/enviroment {{release_path}}/src/.env');
 });
 
 task('link:enviroment-file', function(){
     writeln( '<info>  Link uploads directory </info>' );
-    run ('sudo ln -s {{deploy_path}}/shared/uploads {{release_path}}/src/');
+    run ('sudo ln -s {{deploy_path}}/shared/uploads {{release_path}}/src/web/app/uploads');
 });
 
 // [Optional] If deploy fails automatically unlock.
