@@ -12,13 +12,13 @@ set('repository', 'git@github.com:DeGoedeZaak/amandla-wp.git');
 set( 'keep_releases', 3 );
 
 // [Optional] Allocate tty for git clone. Default value is false.
-set('git_tty', true); 
+set('git_tty', true);
 
-// Shared files/dirs between deploys 
+// Shared files/dirs between deploys
 set('shared_files', []);
 set('shared_dirs', []);
 
-// Writable dirs by web server 
+// Writable dirs by web server
 set('writable_dirs', []);
 set('allow_anonymous_stats', false);
 
@@ -26,8 +26,8 @@ set('allow_anonymous_stats', false);
 
 host('134.122.56.99')
     ->user('web-admin')
-    ->set('deploy_path', '~/{{application}}');    
-    
+    ->set('deploy_path', '~/{{application}}');
+
 
 // Tasks
 
@@ -42,6 +42,7 @@ task('deploy', [
     'deploy:writable',
     'deploy:vendors',
     'deploy:clear_paths',
+    'permission:change',
     'deploy:symlink',
     'deploy:unlock',
     'cleanup',
@@ -53,17 +54,22 @@ after('deploy', 'link:enviroment-file', 'permission:change');
 task('deploy:vendors', function(){
     writeln( '<info>  Updating composer</info>' );
     cd( '{{release_path}}/src');
-    run( 'composer update --no-dev' );	
+    run( 'composer update --no-dev' );
 });
 
 task('permission:change', function(){
     writeln( '<info>  Change owner </info>' );
-    run ('sudo chown -R app:app {{release_path}}'); 
+    run ('sudo chown -R app:app {{release_path}}');
 });
 
 task('link:enviroment-file', function(){
     writeln( '<info>  Link .env file </info>' );
-    run ('sudo ln -s {{deploy_path}}/shared/production/enviroment {{release_path}}/src/.env'); 
+    run ('sudo ln -s {{deploy_path}}/shared/production/enviroment {{release_path}}/src/web/app/uploads');
+});
+
+task('link:enviroment-file', function(){
+    writeln( '<info>  Link uploads directory </info>' );
+    run ('sudo ln -s {{deploy_path}}/shared/uploads {{release_path}}/src/');
 });
 
 // [Optional] If deploy fails automatically unlock.
