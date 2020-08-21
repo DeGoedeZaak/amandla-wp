@@ -42,6 +42,8 @@ task('deploy', [
     'deploy:writable',
     'deploy:vendors',
     'deploy:clear_paths',
+    'link:enviroment-file',
+    'link:uploads',
     'permission:change',
     'deploy:symlink',
     'deploy:unlock',
@@ -49,7 +51,6 @@ task('deploy', [
     'success'
 ]);
 
-after('deploy', 'link:enviroment-file', 'permission:change');
 
 task('deploy:vendors', function(){
     writeln( '<info>  Updating composer</info>' );
@@ -62,12 +63,13 @@ task('permission:change', function(){
     run ('sudo chown -R app:app {{release_path}}');
 });
 
+
 task('link:enviroment-file', function(){
     writeln( '<info>  Link .env file </info>' );
     run ('sudo ln -s {{deploy_path}}/shared/production/enviroment {{release_path}}/src/.env');
 });
 
-task('link:enviroment-file', function(){
+task('link:uploads', function(){
     writeln( '<info>  Link uploads directory </info>' );
     run ('sudo ln -s {{deploy_path}}/shared/uploads {{release_path}}/src/web/app/uploads');
 });
