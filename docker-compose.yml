@@ -4,8 +4,8 @@ services:
     image: nginx:latest
     container_name: amandla-nginx
     ports:
-      - '80:80'
-      - '443:443'
+      - 80
+      - 443
     volumes:
       - ./nginx:/etc/nginx/conf.d
       - ./src:/var/www/html:rw,cached
