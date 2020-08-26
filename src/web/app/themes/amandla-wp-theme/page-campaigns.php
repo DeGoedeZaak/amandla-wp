@@ -14,6 +14,7 @@ $query_campaign = array(
     'post_status'      => 'publish',
 	'orderby'          => 'date',
 	'order'            => 'DESC',
+	'numberposts' => 1000,
 	//'showposts'		   => 2 
 );
  $context['campaign_post']  = Timber::get_posts( $query_campaign ); 
