@@ -4676,7 +4676,7 @@ body[class*="slug_report_card"] .na-row .rating {
 	margin-right: 0px
 }
 
-#topnav>li#blog:after {
+#topnav>li:nth-last-child(3):after {
 	content: " "
 }
 
