@@ -22,6 +22,8 @@ set('shared_dirs', []);
 set('writable_dirs', []);
 set('allow_anonymous_stats', false);
 
+set('cleanup_use_sudo', true);
+
 // Hosts
 
 host('134.122.56.99')
