@@ -10,7 +10,7 @@
 
 $context = Timber::context();
 
- $people_count =  960000;	
+ $people_count =  get_field('number_of_members');
  $home_top_title_c = get_field('home_top_title');	
  $people_count_add = $string = str_replace('{{}}',$people_count, $home_top_title_c);
 	
