@@ -12,7 +12,6 @@ services:
       - ./certs:/etc/certs
     depends_on:
       - wordpress
-    restart: always
     networks: 
       - amandla
 
@@ -24,7 +23,6 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=password
       - MYSQL_DATABASE=amandla
-    restart: always
     ports:
       - '3306:3306'
     networks: 
@@ -46,7 +44,6 @@ services:
       - WORDPRESS_DB_PASSWORD=password
     depends_on:
       - mysql
-    restart: always
     networks: 
       - amandla
 
@@ -54,7 +51,6 @@ services:
     image: composer/composer
     container_name: amandla-composer
     working_dir: /var/www/html
-    restart: 'no'
     volumes:
       - ./src:/var/www/html:rw,cached
 
