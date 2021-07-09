@@ -3,199 +3,210 @@
 {% block content %}
 
 	<div class="twocolumn-container clearfix Join-the-movement desktop-visible">
-		<div class="main width-container">
-			<div class="container_home_top">    
+		<div class="main width-container" sign now>
+
+			<div class="container_home_top">
 				<h2 class="text_center_a">{{ home_top_title }}</h2>
 				<div class="container_home_top_sub">
 					<div class="left-column-home">
 						<div class="container">
-							<img src="{{ home_top_image }}" alt="" />
+							<img src="{{ home_top_image }}" alt=""/>
 							{% if home_top_image !=""%}
-							   <img src="{{ home_top_image }}" alt="" />
-							{%else%}							   
-							   <img src="{{ site.theme.link }}/images/amandla-phone-img-new.png" alt="" />
-							{%endif%}
-						</div>
-					</div>
-					<div class="right-column-home">
-						{{ home_top_description }}
-						
-					</div>
-				</div>  
-			</div>   
-		</div>
-	</div>
-
-    <!-- Latest Campaigns -->
-	<div class="twocolumn-container clearfix home2_campaignslist">  
-	  <div class="main width-container">
-		  <div class="Latest_campaigns_home featured-campaign home2_campaignslist">
-			<h2 class="latest_campaingn_title"><a target="" href="/campaigns">{{ latest_campaigns_title }}</a></h2>
-			<ul class="homepage_excerpt-list">
-				<!-- campaign_post -->
-				{% for homepage_excerpt in campaign_post %}
-					
-					<li>
-						<div class="row-fluid">
-							<div class="excerpt-content span12">
-								<div class="excerpt-image campaign_post_img">
-									<a target="" href="{{ homepage_excerpt.url }}">
-										<img src="{{ homepage_excerpt.image }}" alt="" >
-									</a>
-								</div>
-								<div class="detail_Latest-main">
-									<div class="detail_Latest_campaigns">
-										<span><a target="" href="{{ homepage_excerpt.url }}">{{ homepage_excerpt.post_title }}</a></span>              
-										<p>{{ homepage_excerpt.post_content |striptags| truncate(40)}}</p>          
-
-										{% if homepage_excerpt.max_actions !='' %}
-										
-											<div class="bar-goal">{{ homepage_excerpt.max_actions}} signatures required</div>
-
-											<div class="progress progress_Latest_campaigns">
-												<div class="bar bar-success success_Latest_campaigns" style="width: {{ homepage_excerpt.actions*100 / homepage_excerpt.max_actions}}%;">     
-												{% if homepage_excerpt.actions < 2 %}
-													<div class="bar-text text_Latest_campaigns">JUST STARTED</div>
-												{% else %}
-													<div class="bar-text text_Latest_campaigns">{{ homepage_excerpt.actions}} SIGNATURES</div>
-												{% endif %}
-												</div>
-											</div>
-										{% endif %}
-
-										<div class="excerpt-support-link">
-											<a target="" class="desktop-visible" href="{{ homepage_excerpt.url }}">SIGN NOW</a>
-											<a target="" class="mobile-visible" href="{{ homepage_excerpt.url }}#sidescroll">SIGN NOW</a>
-										</div>
-
-
-									</div>    
-								</div>  
+								<img src="{{ home_top_image }}" alt=""/>
+								{%else%}
+								<img src="{{ site.theme.link }}/images/amandla-phone-img-new.png" alt=""/>
+								{%endif%}
 							</div>
 						</div>
-					</li>	
-				
-				{% endfor %}
-				<!-- END campaign_post -->
-			</ul>
-		  </div>    
-	  </div>
-	</div>
-	
-	
-	
-	
-	<div class="twocolumn-container clearfix mobile_view mobile-visible">
-		<div class="main width-container">
-			<div class="container_home_top">      
-				<div class="container_home_top_sub">
-					<div class="right-column-home">
-					    {{ home_top_description_mobile }}
-						
+						<div class="right-column-home">
+							{{ home_top_description }}
+
+						</div>
 					</div>
-				</div>  
-			</div>   
+				</div>
+			</div>
 		</div>
-	</div>
-	
-	
 
-    
-	<div class="twocolumn-container mobile_view mobile-visible">  
-	  <div class="main width-container">
-	  <div class="community_set_up">     
-		{{ campaign_text_title }}
-		   <div class="excerpt-Campaign-link">
-			 <a target="" href="{{ campaign_btn_link_mobile }}">{{ campaign_btn_text_mobile }}</a>
-		   </div>
-	  </div>  
-	  </div>
-	</div>
-	  
+		<!-- Latest Campaigns -->
+		<div class="twocolumn-container clearfix home2_campaignslist">
+			<div class="main width-container">
+				<div class="Latest_campaigns_home featured-campaign home2_campaignslist">
+					<h2 class="latest_campaingn_title">
+						<a target="" href="/campaigns">{{ latest_campaigns_title }}</a>
+					</h2>
+					<ul
+						class="homepage_excerpt-list">
+						<!-- campaign_post -->
+						{% for homepage_excerpt in campaign_post %}
+							{% set button_txt = homepage_excerpt.id == 932 ? "Send my comment": "SIGN NOW" %}
+							{% set signatures_txt = homepage_excerpt.id == 932 ? "comments": "signatures" %}
+							<li>
+								<div class="row-fluid">
+									<div class="excerpt-content span12">
+										<div class="excerpt-image campaign_post_img">
+											<a target="" href="{{ homepage_excerpt.url }}">
+												<img src="{{ homepage_excerpt.image }}" alt="">
+											</a>
+										</div>
+										<div class="detail_Latest-main">
+											<div class="detail_Latest_campaigns">
+												<span>
+													<a target="" href="{{ homepage_excerpt.url }}">{{ homepage_excerpt.post_title }}</a>
+												</span>
+												<p>{{ homepage_excerpt.post_content |striptags| truncate(40)}}</p>
 
-	<div class="twocolumn-container clearfix_cam Start-your-Campaign desktop-visible">  
-	  <div class="main width-container">
-	  <div class="community_set_up">
-		  <h2>{{ campaign_text_title }}</h2>
-		   <div class="excerpt-Campaign-link">
-			 <a target="" href="{{ campaign_btn_link }}">{{ campaign_btn_text }} >></a>
-		   </div>
-	  </div>  
-	  </div>
-	</div>
+												{% if homepage_excerpt.max_actions !='' %}
 
-	<div class="twocolumn-container">  
-	  <div class="main width-container">
-	  <div class="community_set_up donation_text_home_page">     
-		    {{ home_donation_text }}
-		   <div class="excerpt-Campaign-link btn_donate_view_link">
-			 <a target="" href="{{ home_donation_link }}">{{ home_donation_btn_title }}</a>
-		   </div>
-	  </div>  
-	  </div>
-	</div>
+													<div class="bar-goal">{{ homepage_excerpt.max_actions}}
+														{{signatures_txt}}
+														required</div>
 
 
+													<div class="progress progress_Latest_campaigns">
+														<div class="bar bar-success success_Latest_campaigns" style="width: {{ homepage_excerpt.actions*100 / homepage_excerpt.max_actions}}%;">
+															{% if homepage_excerpt.actions < 2 %}
+																<div class="bar-text text_Latest_campaigns">JUST STARTED</div>
+															{% else %}
+																<div class="bar-text text_Latest_campaigns">{{ homepage_excerpt.actions}}
+																	{{signatures_txt|upper}}</div>
 
-	<div class="twocolumn-container clearfix Latest-News-main-home">
-		<div class="main width-container">
-			<h2 class="Latest_News_title"><a target="" href="/blog">{{ latest_news_title }}</a></h2>
-			<div class="Latest_News_main">
-				
-				<!-- blog -->
-				{% for post_get in latest_post %}
-					<div class="Latest_News_contain">
-						<div class="Latest_News_headline">
-							<a href="{{ post_get.link }}">{{ post_get.post_title }}</a>
+															{% endif %}
+														</div>
+													</div>
+												{% endif %}
+
+												<div class="excerpt-support-link">
+													<a target="" class="desktop-visible" href="{{ homepage_excerpt.url }}">{{ button_txt }}</a>
+													<a target="" class="mobile-visible" href="{{ homepage_excerpt.url }}#sidescroll">{{ button_txt }}</a>
+
+												</div>
+
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+
+						{% endfor %}
+						<!-- END campaign_post -->
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="twocolumn-container clearfix mobile_view mobile-visible">
+			<div class="main width-container">
+				<div class="container_home_top">
+					<div class="container_home_top_sub">
+						<div class="right-column-home">
+							{{ home_top_description_mobile }}
+
 						</div>
-						<div class="byline">{{ post_get.post_date|date("M d, Y") }}</div>
-						<div class="blog_teaser"><p>{{ post_get.post_excerpt|striptags| truncate(80)}} <a class="link-arrow" href="{{ post_get.link }}">Read more</a></p></div>
+					</div>
+				</div>
+			</div</div>
+
+
+			<div class="twocolumn-container mobile_view mobile-visible">
+				<div class="main width-container">
+					<div class="community_set_up">
+						{{ campaign_text_title }}
+						<div class="excerpt-Campaign-link">
+							<a target="" href="{{ campaign_btn_link_mobile }}">{{ campaign_btn_text_mobile }}</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="twocolumn-container clearfix_cam Start-your-Campaign desktop-visible">
+				<div class="main width-container">
+					<div class="community_set_up">
+						<h2>{{ campaign_text_title }}</h2>
+						<div class="excerpt-Campaign-link">
+							<a target="" href="{{ campaign_btn_link }}">{{ campaign_btn_text }}
+								>></a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="twocolumn-container">
+				<div class="main width-container">
+					<div class="community_set_up donation_text_home_page">
+						{{ home_donation_text }}
+						<div class="excerpt-Campaign-link btn_donate_view_link">
+							<a target="" href="{{ home_donation_link }}">{{ home_donation_btn_title }}</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="twocolumn-container clearfix Latest-News-main-home">
+				<div class="main width-container">
+					<h2 class="Latest_News_title">
+						<a target="" href="/blog">{{ latest_news_title }}</a>
+					</h2>
+					<div
+						class="Latest_News_main">
+
+						<!-- blog -->
+						{% for post_get in latest_post %}
+							<div class="Latest_News_contain">
+								<div class="Latest_News_headline">
+									<a href="{{ post_get.link }}">{{ post_get.post_title }}</a>
+								</div>
+								<div class="byline">{{ post_get.post_date|date("M d, Y") }}</div>
+								<div class="blog_teaser">
+									<p>{{ post_get.post_excerpt|striptags| truncate(80)}}
+										<a class="link-arrow" href="{{ post_get.link }}">Read more</a>
+									</p>
+								</div>
+
+							</div>
+						{% endfor %}
+						<!-- END blog -->
 
 					</div>
-				{% endfor %}
-				<!-- END blog -->
-				
-			</div>
-			<div class="facebook_feed">      
+					<div
+						class="facebook_feed">
 
-				<!-- <h2 class="Latest_News_title">Facebook Feed</h2>-->
-				<div class="box">  
-				
-					<div class="fb-page" data-href="https://www.facebook.com/amandla.mobi/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true">
-						<div class="fb-xfbml-parse-ignore">
-							<blockquote cite="https://www.facebook.com/amandla.mobi/"><a href="https://www.facebook.com/amandla.mobi/">amandla.mobi</a></blockquote>
+						<!-- <h2 class="Latest_News_title">Facebook Feed</h2>-->
+						<div class="box">
+
+							<div class="fb-page" data-href="https://www.facebook.com/amandla.mobi/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true">
+								<div class="fb-xfbml-parse-ignore">
+									<blockquote cite="https://www.facebook.com/amandla.mobi/">
+										<a href="https://www.facebook.com/amandla.mobi/">amandla.mobi</a>
+									</blockquote>
+								</div>
+							</div>
+
 						</div>
-					</div> 
-					
-				</div>
-				<div class="follow_btn">
-					<div class="twiiter_home">                     
-						<a class="twitter-timeline" href="https://twitter.com/amandlamobi" data-widget-id=""><img src="{{ site.theme.link }}/images/follow_Tweets_img.png" alt="" ></a>
+						<div class="follow_btn">
+							<div class="twiiter_home">
+								<a class="twitter-timeline" href="https://twitter.com/amandlamobi" data-widget-id=""><img src="{{ site.theme.link }}/images/follow_Tweets_img.png" alt=""></a>
+							</div>
+						</div>
 					</div>
-				</div>      
-			</div>
-		</div> 
-	</div>
-
-
-<!---
-	<div class="content-wrapper">
-		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-			<section class="article-content">
-				<h1 class="article-h1">{{post.title}}</h1>
-				<div class="article-body">
-					{{post.content}}
 				</div>
-			</section>
-		</article>
-	</div> -->
-	
-	
+			</div>
 
-	
-	
-	
-	
-	
-	
-{% endblock %}
+
+			<!---
+																																																<div class="content-wrapper">
+																																																	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+																																																		<section class="article-content">
+																																																			<h1 class="article-h1">{{post.title}}</h1>
+																																																			<div class="article-body">
+																																																				{{post.content}}
+																																																			</div>
+																																																		</section>
+																																																	</article>
+																																																</div> -->
+
+
+		{% endblock %}
